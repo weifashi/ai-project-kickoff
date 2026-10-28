@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI项目启动技能 · 三档自适应源码草案交付</title>
+<style>
+:root{--bg:#f3f4f6;--paper:#fff;--ink:#1f2937;--muted:#5f6876;--line:#dce1e8;--new:#16a34a;--accent:#f59e0b;--warn:#dc2626;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+a{color:#9a4e05} code{font-family:var(--mono);overflow-wrap:anywhere}
+.wrap{width:100%;max-width:900px;margin:auto;padding:0 20px;overflow-wrap:break-word}
+.wrap.desk{max-width:1180px}
+.wrap.rep{max-width:clamp(900px,calc(100vw - 64px),1920px)}
+.wrap.rep .say,.wrap.rep .hint,.wrap.rep .lead,.wrap.rep .rule dd{max-width:52em}
+header{background:var(--paper);border-bottom:3px solid var(--accent);padding:28px 0;margin-bottom:20px}
+h1{font-size:28px;line-height:1.3;margin:0 0 10px} h2{font-size:20px;margin:0 0 12px} h3{font-size:18px;margin:0 0 8px}
+p{margin:8px 0}.muted,small{color:var(--muted)}small{font-size:14px}
+.nav{position:sticky;top:0;z-index:3;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;padding:10px 0;margin-bottom:20px}
+.nav a{display:inline-block;padding:3px 10px;margin-right:6px;border:1px solid var(--line);border-radius:20px;text-decoration:none}
+.st{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px;margin:0 0 20px;min-width:0;scroll-margin-top:76px}
+.n{font-family:var(--mono);color:#b45309}.hint,.upd{background:#fff8e7;border-left:4px solid var(--accent);padding:12px 16px;margin:14px 0}
+.upd,.newf{background:#f0fdf4;border-color:var(--new)}.newf{border:1px dashed var(--new);padding:12px;border-radius:6px}
+.tag-new{color:#116b2e;font-weight:700}.warn{background:#fef2f2;border-color:var(--warn);color:#991b1b}.old{color:var(--warn);text-decoration:line-through}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid2>*{min-width:0}
+.rule{border:1px solid var(--line);border-radius:8px;padding:16px}.rule dl{display:grid;grid-template-columns:100px minmax(0,1fr);gap:8px 12px;margin:12px 0}
+dt{font-weight:650}dd{margin:0}.wrap dd,.wrap dt,.wrap dl>*{min-width:0}
+.ascii{font:14px/1.65 var(--mono);background:#f4f5f7;color:var(--ink);padding:16px;white-space:pre;overflow:auto;max-width:100%;border:1px solid var(--line);border-radius:6px}
+.bleed,.table-scroll{max-width:100%;overflow-x:auto}.wrap.rep .bleed{width:100%;margin-left:0}
+table{width:100%;border-collapse:collapse;font-size:16px;text-align:left}th,td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f8fafc}
+.phone{max-width:340px;width:100%;margin:16px auto;border:1px solid #bfc8d3;border-radius:14px;overflow:hidden;background:#fff}.phone .bar{background:#f1f5f9;padding:12px;text-align:center;font-weight:650}.phone .body{padding:16px}
+.row{display:flex;gap:12px;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0}.row>*{min-width:0}
+.btn{display:block;text-align:center;background:var(--accent);border-radius:6px;padding:10px;margin:14px 0 0;color:#422006;font-weight:650}
+.shell{display:grid;grid-template-columns:150px minmax(0,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden}.sidebar{background:#f1f5f9;padding:16px}.content{min-width:0;padding:16px}.topbar{border-bottom:1px solid var(--line);padding:10px 0;font-weight:650}
+.mmd{margin:16px 0;background:#0b0f14;color:#e5e7eb;padding:18px;overflow-x:auto;max-width:100%;border-radius:8px}.mmd svg{display:block;margin:auto;height:auto}.mmd.wide svg{max-width:none}.mmd details{font-size:14px;margin-top:14px}.mmd pre{overflow:auto}.mmd summary{cursor:pointer}
+.flow{width:680px;max-width:none;height:auto}.foot{padding:20px 0 40px;color:var(--muted);font-size:14px}
+@media(max-width:900px){.wrap table{display:block;overflow-x:auto;max-width:100%}}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.shell{grid-template-columns:1fr}.sidebar{border-bottom:1px solid var(--line)}.st{padding:16px}.wrap{padding:0 12px}h1{font-size:24px}.rule dl{grid-template-columns:1fr;gap:4px}.rule dd{margin-bottom:10px}}
+</style>
+<style>.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{padding:16px;border:1px solid var(--line);border-radius:8px;min-width:0}.card h3{margin:0 0 8px}.chip{display:inline-block;padding:2px 7px;border-radius:4px;background:#fff7ed;border:1px solid #fed7aa;font-size:14px}.chip.ok{background:#dcfce7;border-color:#86efac;color:#166534}.shell .sidebar{background:#fff7ed}.metric{font-size:28px;font-weight:700;color:#166534}.table-scroll{margin:14px 0}.st ul{padding-left:22px}.flow-card{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.flow-card span{padding:10px;border:1px solid var(--line);border-radius:6px}.ascii{font-size:13px}.foot{font-size:14px}.micro{color:var(--muted);font-size:14px}@media(max-width:950px){.grid3{grid-template-columns:1fr}}</style></head>
+<body><header><div class="wrap rep"><small>2026-10-28 · 0.1.0-draft.1 · 源码草案，不安装</small><h1>AI 新项目启动技能：三档自适应版</h1><p class="lead">从想法到头脑风暴、原型、架构、任务、验收与运维；HTML讲给人看，源码与证据留给下一位AI接手。</p></div></header><nav class="nav"><div class="wrap rep"><a href="#s0">00 交付结论</a><a href="#s1">01 全部文件</a><a href="#s2">02 三档流程</a><a href="#s3">03 操作与结果</a><a href="#s4">04 资料归档</a><a href="#s5">05 HTML配套</a><a href="#s6">06 验证与限制</a><a href="#s7">07 使用与留存</a></div></nav><main class="wrap rep"><section class="st" id="s0"><h2><span class="n">00</span> 这次交付的是完整草案包，不是把技能偷偷装上</h2><div class="grid3"><div class="card"><span class="chip ok">已纳入</span><h3>两份协作技能</h3><p>ai-project-kickoff管启动流程，html-mockup管方案/变化的可视化解释。</p></div><div class="card"><span class="chip ok">已补齐</span><h3>8篇手册 + 9份模板</h3><p>涵盖多平台、需求原型、架构安全、选型、资料运维、测试交接与同步版本。</p></div><div class="card"><span class="chip">保持边界</span><h3>草案，暂不安装</h3><p>未修改业务项目、数据库、API或全局技能；源码同步不等于安装生效。</p></div></div><div class="hint">已采用你的选择：三档自适应；必须包含html-mockup；GitHub唯一源码；it-note导航与固定版本摘要。下面的使用界面是示意，不是额外开发了项目管理平台。</div></section><section class="st" id="s1"><h2><span class="n">01</span> 文件底账：本版本共 41 个分发文件</h2><p class="say">基线为新建空仓库，以下文件均为新增；字节码与浏览器临时目录不分发。每个文件都在清单里，不把模板和配套脚本藏在“等等”中。</p><pre class="ascii">ai-project-kickoff/
+  .gitignore                                                                   +  8
+  NOTICE.md                                                                    +  7
+  README.md                                                                    + 49
+  VERSION                                                                      +  1
+  docs/accepted-design.md                                                      + 28
+  docs/delivery-report.html                                                    +106
+  docs/research-snapshot.json                                                  +358
+  docs/scenario-evidence.md                                                    + 35
+  docs/validation.md                                                           + 44
+  skills/ai-project-kickoff/SKILL.md                                           +127
+  skills/ai-project-kickoff/agents/openai.yaml                                 +  4
+  skills/ai-project-kickoff/assets/templates/ai-handoff.md                     + 73
+  skills/ai-project-kickoff/assets/templates/architecture-decision.md          + 69
+  skills/ai-project-kickoff/assets/templates/document-index.md                 + 66
+  skills/ai-project-kickoff/assets/templates/operations-runbook.md             + 79
+  skills/ai-project-kickoff/assets/templates/project-brief.md                  + 66
+  skills/ai-project-kickoff/assets/templates/prototype-record.md               + 73
+  skills/ai-project-kickoff/assets/templates/research-record.md                + 69
+  skills/ai-project-kickoff/assets/templates/startup-readiness.md              + 72
+  skills/ai-project-kickoff/assets/templates/task-packet.md                    + 70
+  skills/ai-project-kickoff/references/architecture-and-security.md            +188
+  skills/ai-project-kickoff/references/documentation-and-operations.md         +219
+  skills/ai-project-kickoff/references/lifecycle.md                            +166
+  skills/ai-project-kickoff/references/platforms.md                            +179
+  skills/ai-project-kickoff/references/prototypes-and-design.md                +182
+  skills/ai-project-kickoff/references/quality-and-handoff.md                  +186
+  skills/ai-project-kickoff/references/research-and-selection.md               +118
+  skills/ai-project-kickoff/references/sync-and-versioning.md                  + 55
+  skills/html-mockup/LICENSE.source-MIT.txt                                    + 21
+  skills/html-mockup/SKILL.md                                                  + 94
+  skills/html-mockup/SOURCE-HASHES.json                                        + 62
+  skills/html-mockup/SOURCE.md                                                 + 26
+  skills/html-mockup/assets/blocks.html                                        + 45
+  skills/html-mockup/assets/check-overflow.py                                  + 78
+  skills/html-mockup/assets/probe-browser.mjs                                  + 98
+  skills/html-mockup/assets/render-mermaid.py                                  +141
+  skills/html-mockup/assets/template.html                                      + 58
+  skills/html-mockup/references/change-report.md                               + 74
+  skills/html-mockup/references/tools.md                                       + 43
+  tests/html_mockup_tools_test.py                                              +161
+  tests/package_integrity_test.py                                              +122
+</pre><p>表字段：无业务表字段变更。业务规则：没有修改任何现有产品规则；新增的是供未来项目使用的流程约定、模板与本包检查工具。接口与多语言：没有业务API或生产文案变更。</p></section><section class="st" id="s2"><h2><span class="n">02</span> 三档不是三套流程：同一路线，不同证据深度</h2><div class="table-scroll"><table><thead><tr><th>档位</th><th>典型项目</th><th>必须保留</th><th>允许精简</th></tr></thead><tbody><tr><td>轻量</td><td>低风险个人工具、内容站、单点探索</td><td>目标/范围、HTML、验收和资料入口、授权边界</td><td>资料合页，不造无需求的登录/数据库/后台。</td></tr><tr><td>标准</td><td>普通新产品、团队协作、常规集成</td><td>主流程与异常、规则权限、关键架构/契约、任务测试、运维准备</td><td>按模块合并，不强求文件数量或某个技术栈。</td></tr><tr><td>高风险</td><td>资金/敏感数据/高影响权限、不可逆变更、关键离线交易和外设</td><td>标准内容 + 风险spike、幂等/结果核对、恢复与相应实测</td><td>可缩业务范围，不能删适用安全证据或把模拟当真实验收。</td></tr></tbody></table></div><div class="flow-card"><span>识别上下文</span><span>头脑风暴/调研</span><span>MVP与规则</span><span>原型与架构迭代</span><span>任务/真实切片</span><span>验证与运维交接</span></div><p>平台、风险档位、交付目标分别判断：高风险项目也可以只做方案；默认标准，发现高风险升级，不因赶工降档。架构、原型和风险探索互相校正，不僵化成瀑布审批。</p></section><section class="st" id="s3"><h2><span class="n">03</span> 以后怎么用：输入一个想法，得到可继续施工的项目包</h2><div class="shell"><aside class="sidebar"><b>项目资料中心</b><p>目标与范围</p><p>用户旅程</p><p>原型评审</p><p>架构与决定</p><p>任务与证据</p><p>运维与交接</p></aside><div class="content"><div class="topbar">示意 · 开工就绪方案 <span class="chip">原型待确认</span></div><div class="grid2"><article class="card"><h3>用户的输入</h3><p>做什么、给谁用、现有技术/平台、预算限制、本轮做到哪。</p></article><article class="card"><h3>AI交付</h3><p>取舍、MVP/不做、页面或契约、关键规则、风险、任务、资料索引与验收方法。</p></article></div><div class="hint">没有明确需求不自动加后台、数据库、云服务、LLM或MCP；有成熟Vue/Java等体系就先沿用。</div></div></div><div class="table-scroll"><table><thead><tr><th>页面/入口</th><th>用户操作</th><th>结果与边界</th></tr></thead><tbody><tr><td>项目启动对话</td><td>描述目标和限制</td><td>AI建议档位、调查必要事实；只问会改变下一步的关键问题。</td></tr><tr><td>HTML方案页</td><td>查看主任务、异常与备选，确认对应版本</td><td>保存评审记录和版本；确认外观不等于允许付款/部署/迁移。</td></tr><tr><td>开发任务包</td><td>授权实现某个切片</td><td>按文件边界与依赖实现，验证真实结果；模拟范围明确标注。</td></tr><tr><td>阶段汇报页</td><td>查看变化、证据、未验证与回退</td><td>有diff才报改动；原型图和编译通过不能冒充全功能验收。</td></tr></tbody></table></div><p class="micro">以上为未来使用示意。本次只交付技能草案和合成场景，不是已经实现这些业务界面。</p></section><section class="st" id="s4"><h2><span class="n">04</span> 原型、架构、运维放在哪：位置与维护责任一起写</h2><pre class="ascii">PROJECT ARCHIVE
+  docs/index.md
+  docs/project/status.md            -&gt; one current status source
+  docs/research/                    -&gt; source + date + selection
+  docs/product/                     -&gt; scope + rules + acceptance
+  docs/design/prototypes/&lt;feature&gt;/
+    index.md                        -&gt; version + review index
+    source/index.html               -&gt; editable canonical artifact
+    snapshots/                      -&gt; verified visual states
+    reviews/                        -&gt; feedback + decisions
+  docs/architecture/decisions/       -&gt; ADR + consequences + exit
+  docs/data/ + docs/api/             -&gt; source/schema references
+  docs/testing/                     -&gt; evidence + limitations
+  docs/operations/                  -&gt; deploy + migrate + restore + alert
+  docs/releases/ + docs/ai/handoff.md
+
+DISPLAY COPY
+  preview_html / authorized existing server
+  same archived version; not the only copy</pre><p>已有项目保留原目录并建映射，不自动搬家或创建一堆空文件。每类资料写维护者、何时更新和唯一来源；schema/API/迁移仍以对应源码或契约为准。</p><p>运维不只部署命令，还包括环境、制品身份、兼容迁移、代码回滚与数据恢复的区别、数据库/文件备份、RPO/RTO与恢复实测、监控告警、故障责任、升级和停服。</p></section><section class="st" id="s5"><h2><span class="n">05</span> html-mockup已随包：必须有HTML，也必须诚实验收</h2><div class="table-scroll"><table><thead><tr><th>原方式/风险</th><th>本包规则或工具</th><th>用户能感觉到什么</th></tr></thead><tbody><tr><td>只说“有工具时可用”，容易漏报告</td><td>方案A和实际改动B是固定环节；无UI项目画调用/契约HTML</td><td>每个项目都有能评审的说明，不只一串技术名词。</td></tr><tr><td>原型只在临时展示目录</td><td>项目内source/快照/评审归档，展示目录是副本</td><td>链接失效后仍能继续修改并查到拍板版本。</td></tr><tr><td>缺文件、探测失败可能被后续成功掩盖</td><td>随包工具fail-closed：缺文件/依赖、空探测、超时、浏览器失败均非零</td><td>不知道就报未验证，不把检查“没跑到”当通过。</td></tr><tr><td>请求390可能被浏览器窗口最小宽度夹成485</td><td>CDP直接设置CSS布局视口，逐次核对请求与实测</td><td>手机宽度是真的被检查，不是拿更宽窗口替代。</td></tr><tr><td>图源码未显示，或手机字被压成蚂蚁字</td><td>真实渲染SVG；图原始字号保留，窄屏局部横滚；保留折叠源码</td><td>打开就能看图，截图/小屏仍可读。</td></tr></tbody></table></div><div class="hint">这些改动只在随包适配版里；本机原html-mockup哈希未变，没有替换全局技能。原MIT版权和来源哈希已保留，未擅自把整个仓库重新授权。</div></section><section class="st" id="s6"><h2><span class="n">06</span> 验证结果与没有验证的事</h2><div class="table-scroll"><table><thead><tr><th>检查</th><th>实际结果</th></tr></thead><tbody><tr><td>技能格式</td><td>2/2通过；仅证明结构合法。</td></tr><tr><td>工具单测</td><td>19/19通过；错误路径、原子替换、幂等均有覆盖。</td></tr><tr><td>全包结构/链接/锚点/模板/HTML资源</td><td>6/6结构测试通过；两技能、9模板、相对路径/锚点、围栏和HTML自包含已检查；合计25项测试通过</td></tr><tr><td>模板与blocks精确视口</td><td>6/6测量通过：390、768、1440；溢出0，未受控元素0。</td></tr><tr><td>真实Mermaid</td><td>实际渲染成功；三遍哈希一致；最终图三种视口通过。</td></tr><tr><td>独立场景应用</td><td>4例独立试跑：轻量CLI、标准Vue/Java协作、高风险离线收银、高风险未成年人AI；实际原型均完成并复核，非真实业务验收</td></tr><tr><td>最终报告浏览器</td><td>390/768/1440三次精确CSS视口通过；溢出0、未受控元素0；已核对截图</td></tr></tbody></table></div><div class="hint warn">未安装技能；没有业务生产验收、真实收款、真实学生资料、收费模型、外设或真机联调。配套浏览器工具实测Linux，未逐一验证macOS/Windows。行为场景不能证明所有未来项目零遗漏；技术选型快照须在未来立项复查。</div><p>完整检查范围、可复查命令与限制见仓库 <code>docs/validation.md</code>。19工具单测的模拟分支、真实浏览器测量和真正业务验收是不同证据层，不能互相替代。</p></section><section class="st" id="s7"><h2><span class="n">07</span> 留存与下一次使用：GitHub源码，笔记只指向固定版本</h2><p><b>源码目标：</b><a href="https://github.com/weifashi/ai-project-kickoff">weifashi/ai-project-kickoff</a>，私有草案仓库。<b>笔记位置：</b>it-note → AI记忆 → AI新项目启动技能（导航与版本摘要）。同步结果以最终回读为准，本文件不预先宣称写入完成。</p><pre class="ascii">validate local draft
+  -&gt; authorized GitHub commit / push
+  -&gt; read back exact revision
+  -&gt; update it-note summary with fixed revision
+  -&gt; read back note
+  -&gt; stop; no installation</pre><p>下一次可以直接让AI读取 <code>skills/ai-project-kickoff/SKILL.md</code>，说明项目想法、团队/平台和本轮目标。与配套html-mockup一起按文件读取，不需要现在安装。</p><p>如果某端失败，保留已核验源码，标明“笔记落后/未同步”，先核对实际状态再重试。源码、远端、笔记、安装四件事分别汇报。</p><p><b>撤销/回退：</b>源码回到固定历史版本；笔记跟随该版本改摘要。没有安装或业务数据变更，不需要应用/数据库回滚；不会自动删除远端仓库或笔记。</p></section><footer class="wrap rep foot">源码草案 0.1.0-draft.1 · 本报告保存在仓库 docs/delivery-report.html · 无外部运行资源</footer></main></body></html>

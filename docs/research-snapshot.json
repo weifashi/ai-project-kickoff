@@ -1,0 +1,358 @@
+{
+  "snapshot_date": "2026-10-28",
+  "github": {
+    "fetched_at": "2026-10-28T16:17:07.464804+00:00",
+    "projects": [
+      {
+        "repo": "tailwindlabs/tailwindcss",
+        "stars": 98010,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-19T15:50:56Z",
+        "url": "https://github.com/tailwindlabs/tailwindcss",
+        "description": "A utility-first CSS framework for rapid UI development."
+      },
+      {
+        "repo": "shadcn-ui/ui",
+        "stars": 126813,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-27T12:59:03Z",
+        "url": "https://github.com/shadcn-ui/ui",
+        "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own."
+      },
+      {
+        "repo": "ant-design/ant-design",
+        "stars": 99973,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-28T11:08:08Z",
+        "url": "https://github.com/ant-design/ant-design",
+        "description": "An enterprise-class UI design language and React UI library"
+      },
+      {
+        "repo": "mui/material-ui",
+        "stars": 99284,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-28T13:33:18Z",
+        "url": "https://github.com/mui/material-ui",
+        "description": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever."
+      },
+      {
+        "repo": "mantinedev/mantine",
+        "stars": 31883,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-25T20:15:42Z",
+        "url": "https://github.com/mantinedev/mantine",
+        "description": "A fully featured React components library"
+      },
+      {
+        "repo": "heroui-inc/heroui",
+        "stars": 31048,
+        "license": "Apache-2.0",
+        "archived": false,
+        "pushed_at": "2026-10-26T10:05:53Z",
+        "url": "https://github.com/heroui-inc/heroui",
+        "description": "🚀 Beautiful, fast and modern React UI library. (Previously NextUI)"
+      },
+      {
+        "repo": "DavidHDev/react-bits",
+        "stars": 50523,
+        "license": "NOASSERTION",
+        "archived": false,
+        "pushed_at": "2026-10-19T07:37:02Z",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "description": "The largest open-source library of animated, interactive, and customizable React & Next.js components for building standout web products and experiences. Built for humans and AI agents."
+      },
+      {
+        "repo": "magicuidesign/magicui",
+        "stars": 22931,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-17T05:27:02Z",
+        "url": "https://github.com/magicuidesign/magicui",
+        "description": "UI Library for Design Engineers. Animated components and effects you can copy and paste into your apps. Free. Open Source."
+      },
+      {
+        "repo": "refinedev/refine",
+        "stars": 35958,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-09-10T12:56:35Z",
+        "url": "https://github.com/refinedev/refine",
+        "description": "A React Framework for building  internal tools, admin panels, dashboards & B2B apps with unmatched flexibility."
+      },
+      {
+        "repo": "marmelab/react-admin",
+        "stars": 26976,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-28T15:46:58Z",
+        "url": "https://github.com/marmelab/react-admin",
+        "description": "A frontend Framework for single-page applications on top of REST/GraphQL APIs, using TypeScript, React and Material Design"
+      },
+      {
+        "repo": "ant-design/ant-design-pro",
+        "stars": 38907,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-26T02:53:29Z",
+        "url": "https://github.com/ant-design/ant-design-pro",
+        "description": "👨🏻‍💻👩🏻‍💻 Use Ant Design like a Pro!"
+      },
+      {
+        "repo": "ant-design/pro-components",
+        "stars": 4846,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-27T05:55:33Z",
+        "url": "https://github.com/ant-design/pro-components",
+        "description": "🏆 Use Ant Design like a Pro!"
+      },
+      {
+        "repo": "satnaing/shadcn-admin",
+        "stars": 16225,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-09-10T22:30:37Z",
+        "url": "https://github.com/satnaing/shadcn-admin",
+        "description": "Admin Dashboard UI built with Shadcn and Vite."
+      },
+      {
+        "repo": "vbenjs/vue-vben-admin",
+        "stars": 33700,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-27T20:37:08Z",
+        "url": "https://github.com/vbenjs/vue-vben-admin",
+        "description": "A modern vue admin panel built with Vue3, Shadcn UI, Vite, TypeScript, and Monorepo. It's fast!"
+      },
+      {
+        "repo": "element-plus/element-plus",
+        "stars": 27825,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-26T20:08:39Z",
+        "url": "https://github.com/element-plus/element-plus",
+        "description": "🎉 A Vue.js 3 UI Library made by Element team"
+      },
+      {
+        "repo": "unovue/shadcn-vue",
+        "stars": 10743,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-28T09:51:01Z",
+        "url": "https://github.com/unovue/shadcn-vue",
+        "description": "Vue port of shadcn-ui"
+      },
+      {
+        "repo": "vueComponent/ant-design-vue",
+        "stars": 21696,
+        "license": "NOASSERTION",
+        "archived": false,
+        "pushed_at": "2026-10-22T19:36:49Z",
+        "url": "https://github.com/vueComponent/ant-design-vue",
+        "description": "🌈  An enterprise-class UI components based on Ant Design and Vue. 🐜"
+      },
+      {
+        "repo": "TanStack/table",
+        "stars": 28527,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-21T14:02:33Z",
+        "url": "https://github.com/TanStack/table",
+        "description": "🤖 Headless UI for building powerful tables & datagrids for TS/JS -  React-Table, Vue-Table, Solid-Table, Svelte-Table"
+      },
+      {
+        "repo": "TanStack/query",
+        "stars": 50495,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-28T11:55:49Z",
+        "url": "https://github.com/TanStack/query",
+        "description": "🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query."
+      },
+      {
+        "repo": "react-hook-form/react-hook-form",
+        "stars": 44890,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-28T03:43:07Z",
+        "url": "https://github.com/react-hook-form/react-hook-form",
+        "description": "📋 React Hooks for form state management and validation (Web + React Native)"
+      },
+      {
+        "repo": "colinhacks/zod",
+        "stars": 44217,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-19T22:46:10Z",
+        "url": "https://github.com/colinhacks/zod",
+        "description": "TypeScript-first schema validation with static type inference"
+      },
+      {
+        "repo": "microsoft/playwright",
+        "stars": 98737,
+        "license": "Apache-2.0",
+        "archived": false,
+        "pushed_at": "2026-10-28T15:42:50Z",
+        "url": "https://github.com/microsoft/playwright",
+        "description": "Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. "
+      },
+      {
+        "repo": "vitest-dev/vitest",
+        "stars": 17300,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-28T11:01:59Z",
+        "url": "https://github.com/vitest-dev/vitest",
+        "description": "Next generation testing framework powered by Vite."
+      },
+      {
+        "repo": "storybookjs/storybook",
+        "stars": 91396,
+        "license": "MIT",
+        "archived": false,
+        "pushed_at": "2026-10-28T15:52:22Z",
+        "url": "https://github.com/storybookjs/storybook",
+        "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation"
+      },
+      {
+        "repo": "supabase/supabase",
+        "stars": 114250,
+        "license": "Apache-2.0",
+        "archived": false,
+        "pushed_at": "2026-10-28T16:14:58Z",
+        "url": "https://github.com/supabase/supabase",
+        "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
+      },
+      {
+        "repo": "twbs/bootstrap",
+        "stars": 175019,
+        "license": "MIT",
+        "pushed_at": "2026-10-27T20:19:27Z",
+        "archived": false,
+        "url": "https://github.com/twbs/bootstrap"
+      },
+      {
+        "repo": "saadeghi/daisyui",
+        "stars": 42698,
+        "license": "MIT",
+        "pushed_at": "2026-10-17T16:05:50Z",
+        "archived": false,
+        "url": "https://github.com/saadeghi/daisyui"
+      },
+      {
+        "repo": "unocss/unocss",
+        "stars": 18990,
+        "license": "NOASSERTION",
+        "pushed_at": "2026-10-26T12:39:02Z",
+        "archived": false,
+        "url": "https://github.com/unocss/unocss"
+      }
+    ]
+  },
+  "npm": [
+    {
+      "downloads": 515522114,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "tailwindcss",
+      "url": "https://api.npmjs.org/downloads/point/last-month/tailwindcss"
+    },
+    {
+      "downloads": 44809742,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "shadcn",
+      "url": "https://api.npmjs.org/downloads/point/last-month/shadcn"
+    },
+    {
+      "downloads": 13997643,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "antd",
+      "url": "https://api.npmjs.org/downloads/point/last-month/antd"
+    },
+    {
+      "downloads": 37870518,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "@mui/material",
+      "url": "https://api.npmjs.org/downloads/point/last-month/@mui%2Fmaterial"
+    },
+    {
+      "downloads": 10337059,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "@mantine/core",
+      "url": "https://api.npmjs.org/downloads/point/last-month/@mantine%2Fcore"
+    },
+    {
+      "downloads": 2746620,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "@heroui/react",
+      "url": "https://api.npmjs.org/downloads/point/last-month/@heroui%2Freact"
+    },
+    {
+      "downloads": 956340,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "@refinedev/core",
+      "url": "https://api.npmjs.org/downloads/point/last-month/@refinedev%2Fcore"
+    },
+    {
+      "downloads": 644489,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "react-admin",
+      "url": "https://api.npmjs.org/downloads/point/last-month/react-admin"
+    },
+    {
+      "downloads": 479401,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "@ant-design/pro-components",
+      "url": "https://api.npmjs.org/downloads/point/last-month/@ant-design%2Fpro-components"
+    },
+    {
+      "downloads": 2631083,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "element-plus",
+      "url": "https://api.npmjs.org/downloads/point/last-month/element-plus"
+    },
+    {
+      "downloads": 88036291,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "@tanstack/react-table",
+      "url": "https://api.npmjs.org/downloads/point/last-month/@tanstack%2Freact-table"
+    },
+    {
+      "downloads": 250319172,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "@tanstack/react-query",
+      "url": "https://api.npmjs.org/downloads/point/last-month/@tanstack%2Freact-query"
+    },
+    {
+      "downloads": 204974662,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "react-hook-form",
+      "url": "https://api.npmjs.org/downloads/point/last-month/react-hook-form"
+    },
+    {
+      "downloads": 1273852097,
+      "start": "2026-09-27",
+      "end": "2026-10-26",
+      "package": "zod",
+      "url": "https://api.npmjs.org/downloads/point/last-month/zod"
+    }
+  ],
+  "scope": "Official API snapshots, not growth/usage/security rankings"
+}

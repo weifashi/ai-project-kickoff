@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>需求 / 改动说明 - 请替换标题</title>
+<style>
+:root{--bg:#f3f4f6;--paper:#fff;--ink:#1f2937;--muted:#5f6876;--line:#dce1e8;--new:#16a34a;--accent:#f59e0b;--warn:#dc2626;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+a{color:#9a4e05} code{font-family:var(--mono);overflow-wrap:anywhere}
+.wrap{width:100%;max-width:900px;margin:auto;padding:0 20px;overflow-wrap:break-word}
+.wrap.desk{max-width:1180px}
+.wrap.rep{max-width:clamp(900px,calc(100vw - 64px),1920px)}
+.wrap.rep .say,.wrap.rep .hint,.wrap.rep .lead,.wrap.rep .rule dd{max-width:52em}
+header{background:var(--paper);border-bottom:3px solid var(--accent);padding:28px 0;margin-bottom:20px}
+h1{font-size:28px;line-height:1.3;margin:0 0 10px} h2{font-size:20px;margin:0 0 12px} h3{font-size:18px;margin:0 0 8px}
+p{margin:8px 0}.muted,small{color:var(--muted)}small{font-size:14px}
+.nav{position:sticky;top:0;z-index:3;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;padding:10px 0;margin-bottom:20px}
+.nav a{display:inline-block;padding:3px 10px;margin-right:6px;border:1px solid var(--line);border-radius:20px;text-decoration:none}
+.st{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px;margin:0 0 20px;min-width:0;scroll-margin-top:76px}
+.n{font-family:var(--mono);color:#b45309}.hint,.upd{background:#fff8e7;border-left:4px solid var(--accent);padding:12px 16px;margin:14px 0}
+.upd,.newf{background:#f0fdf4;border-color:var(--new)}.newf{border:1px dashed var(--new);padding:12px;border-radius:6px}
+.tag-new{color:#116b2e;font-weight:700}.warn{background:#fef2f2;border-color:var(--warn);color:#991b1b}.old{color:var(--warn);text-decoration:line-through}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid2>*{min-width:0}
+.rule{border:1px solid var(--line);border-radius:8px;padding:16px}.rule dl{display:grid;grid-template-columns:100px minmax(0,1fr);gap:8px 12px;margin:12px 0}
+dt{font-weight:650}dd{margin:0}.wrap dd,.wrap dt,.wrap dl>*{min-width:0}
+.ascii{font:14px/1.65 var(--mono);background:#f4f5f7;color:var(--ink);padding:16px;white-space:pre;overflow:auto;max-width:100%;border:1px solid var(--line);border-radius:6px}
+.bleed,.table-scroll{max-width:100%;overflow-x:auto}.wrap.rep .bleed{width:100%;margin-left:0}
+table{width:100%;border-collapse:collapse;font-size:16px;text-align:left}th,td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f8fafc}
+.phone{max-width:340px;width:100%;margin:16px auto;border:1px solid #bfc8d3;border-radius:14px;overflow:hidden;background:#fff}.phone .bar{background:#f1f5f9;padding:12px;text-align:center;font-weight:650}.phone .body{padding:16px}
+.row{display:flex;gap:12px;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0}.row>*{min-width:0}
+.btn{display:block;text-align:center;background:var(--accent);border-radius:6px;padding:10px;margin:14px 0 0;color:#422006;font-weight:650}
+.shell{display:grid;grid-template-columns:150px minmax(0,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden}.sidebar{background:#f1f5f9;padding:16px}.content{min-width:0;padding:16px}.topbar{border-bottom:1px solid var(--line);padding:10px 0;font-weight:650}
+.mmd{margin:16px 0;background:#0b0f14;color:#e5e7eb;padding:18px;overflow-x:auto;max-width:100%;border-radius:8px}.mmd svg{display:block;margin:auto;height:auto}.mmd.wide svg{max-width:none}.mmd details{font-size:14px;margin-top:14px}.mmd pre{overflow:auto}.mmd summary{cursor:pointer}
+.flow{width:680px;max-width:none;height:auto}.foot{padding:20px 0 40px;color:var(--muted);font-size:14px}
+@media(max-width:900px){.wrap table{display:block;overflow-x:auto;max-width:100%}}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.shell{grid-template-columns:1fr}.sidebar{border-bottom:1px solid var(--line)}.st{padding:16px}.wrap{padding:0 12px}h1{font-size:24px}.rule dl{grid-template-columns:1fr;gap:4px}.rule dd{margin-bottom:10px}}
+</style>
+</head>
+<body>
+<!-- 模式 A 用 wrap；模式 B 的页头/导航/正文统一用 wrap rep。以下为骨架，不是验收事实。 -->
+<header><div class="wrap rep"><small>模式 A 方案 / 模式 B 实际改动 · 草稿 · YYYY-MM-DD</small><h1>请替换：一页讲清这件事</h1><p class="lead">先写一句大白话结论，再说明证据、页面操作和结果。</p></div></header>
+<nav class="nav" aria-label="说明章节"><div class="wrap rep"><a href="#s0">结论</a><a href="#s1">范围</a><a href="#s2">字段</a><a href="#s3">规则与页面</a><a href="#s4">流转</a><a href="#s5">影响</a><a href="#s6">接口</a><a href="#s7">验证与回滚</a></div></nav>
+<main class="wrap rep">
+<div class="upd"><b>本次更新</b><p>第二版起列出实际更新项与锚点；首版可删除本块。所有“待补充”必须替换或明确列为未验证。</p></div>
+<section class="st" id="s0"><h2><span class="n">S0</span> 一句话说清</h2><p class="say">待补充：为什么要做、这次实际做了什么、谁会感觉到变化。</p><div class="hint">状态必须分开：计划 / 已修改 / 已验证 / 未验证，不能拿方案当结果。</div></section>
+<section class="st" id="s1"><h2><span class="n">S1</span> 范围与改动全景</h2><p class="say">待补充：基线、文件数、证据与覆盖率。ASCII 框线内部只用半角，中文说明放框外。</p><pre class="ascii">project/
+  +-- module/example.ext     +0 -0    R1
+  `-- tests/example_test.ext +0 -0    no_rule_change</pre></section>
+<section class="st" id="s2"><h2><span class="n">S2</span> 表与字段</h2><p class="say">待补充：真实表名、字段旧/新定义、默认值、可空、索引、存量数据与回滚。没有就写“无数据库结构变化”，不要猜。</p><div class="table-scroll"><table><thead><tr><th>表 / 字段</th><th>原定义 → 新定义</th><th>存量影响 / 回滚</th></tr></thead><tbody><tr><td>待核对源码</td><td>待核对迁移</td><td>待验证，不应执行</td></tr></tbody></table></div></section>
+<section class="st" id="s3"><h2><span class="n">S3</span> 原有规则与页面操作</h2><p class="say">下面只是占位结构。画真实页面前，必须先看实际源码或受控截图。</p><article class="rule"><h3>R1 待替换为真实规则</h3><dl><dt>原规则</dt><dd>待补充旧代码 file:line。</dd><dt>新规则</dt><dd class="newf">待补充新代码 file:line。</dd><dt>页面</dt><dd>实际页面与入口。</dd><dt>操作</dt><dd>点击哪个按钮，填写什么条件。</dd><dt>结果</dt><dd>改前怎样 → 改后怎样；接口、数据、角色分别受何影响。</dd><dt>风险</dt><dd>待补充触发条件、兼容性与待确认项。</dd></dl></article><div class="grid2"><div><h3>改前：页面示意占位</h3><div class="phone"><div class="bar">真实页面名称</div><div class="body"><div class="row"><span>真实字段</span><span>原值</span></div><span class="btn">实际按钮文案</span></div></div></div><div><h3>改后：页面示意占位</h3><div class="phone"><div class="bar">真实页面名称</div><div class="body"><div class="row newf"><span>真实字段</span><span>新值</span></div><span class="btn">实际按钮文案</span></div></div></div></div><div class="hint">解释放这里，不要把分析文字画成界面本来就有的文案。服务端改动也要画出用户进入此路径的页面；确实无页面则画任务/接口入口，并写清理由。</div></section>
+<section class="st" id="s4"><h2><span class="n">S4</span> 流转与调用链</h2><p class="say">此处是已经渲染的内联 SVG 占位图，不依赖 CDN；换成真实流转。复杂图可使用 blocks 的 Mermaid 卡并运行渲染器。</p><div class="bleed"><svg class="flow" viewBox="0 0 680 100" role="img" aria-label="占位流转：页面操作进入规则判断并产生结果"><defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6" fill="none" stroke="#64748b"/></marker></defs><g fill="#f8fafc" stroke="#cbd5e1"><rect x="10" y="20" width="175" height="60" rx="8"/><rect x="250" y="20" width="175" height="60" rx="8"/><rect x="490" y="20" width="175" height="60" rx="8"/></g><g stroke="#64748b" marker-end="url(#arrow)"><path d="M185 50 H240"/><path d="M425 50 H480"/></g><g fill="#334155" font-family="sans-serif" font-size="18" text-anchor="middle"><text x="97" y="57">页面 / 操作</text><text x="337" y="57">规则判断</text><text x="577" y="57">结果 / 影响</text></g></svg></div><small>窄屏可在图内左右滑动，保留文字原始字号。</small></section>
+<section class="st" id="s5"><h2><span class="n">S5</span> 业务点与调用方</h2><p class="say">待补充：谁、在哪个场景、通过哪个调用方遇到本次变化；不要只写函数名。</p></section>
+<section class="st" id="s6"><h2><span class="n">S6</span> 接口与文案</h2><p class="say">待补充：路由、请求/响应、状态码、旧客户端兼容性、多语言缺项；没有变化也明确说明。</p></section>
+<section class="st" id="s7"><h2><span class="n">S7</span> 风险 · 回滚 · 验证</h2><p class="say">待补充：实际运行的检查、证据路径、跳过项、代码回滚与数据回滚；计划检查不能写成通过。</p><div class="hint warn">本文件是可复用模板，不是项目交付报告。只有最终文件经过真实浏览器与 390 / 768 / 1440 CSS px 溢出检查后，才能报告对应检查通过。</div></section>
+</main><footer class="wrap rep foot">长期归档：项目 docs/design/prototypes/&lt;slug&gt;/source/index.html · preview_html / 服务器仅展示副本</footer>
+</body></html>

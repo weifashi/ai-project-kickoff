@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 新项目启动"
+  short_description: "从想法、头脑风暴与原型，到架构、文档归档、验收和运维交接的项目启动流程"
+  default_prompt: "使用 $ai-project-kickoff，按我的项目类型和约束准备可评审、可归档、可验证的项目启动方案，先确认本次交付范围。"

@@ -1,0 +1,62 @@
+{
+  "retrieved": "2026-10-28",
+  "source_id": "local-existing-html-mockup",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "092f583c4aed42124c2f4e0d57262d8035e5cebc51025993313a3c892e92edc3"
+    },
+    {
+      "path": "README.md",
+      "sha256": "2f4cced3bf88540d5024888d332a38f92ca0a84ad38272310fb3cd2d406624b6"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7957e26cc475fe337d49d32bd7cc63352a7b25ba922469feb4272ec240d63645"
+    },
+    {
+      "path": "references/change-report.md",
+      "sha256": "6651ddf63ab94461aa33c754668a427549f0b7849cb0c96c0b19fe5e3809e841"
+    },
+    {
+      "path": "references/blocks.md",
+      "sha256": "ada2069c226662dc121d9aced77b68ba52da2a7b9384f4de61a323a9bca74720"
+    },
+    {
+      "path": "references/archify.md",
+      "sha256": "73ffb777b755ef3956fb22f84255b133ded656e3159221162daaf52d64d75fc0"
+    },
+    {
+      "path": "assets/template.html",
+      "sha256": "a7cc42e8a9365b6df00c72c4ba8940c0899328502ed7057e4f9c47b426c20662"
+    },
+    {
+      "path": "assets/blocks.html",
+      "sha256": "308cf08c97abfb4b8fc41a4a4b526ef103865f20bdfd54f672665d3535a0e818"
+    },
+    {
+      "path": "assets/check-overflow.py",
+      "sha256": "928b6df5c309f29ca158d01ce2d23ad8c30dd9a65122ce567681509b53ffa835"
+    },
+    {
+      "path": "assets/render-mermaid.py",
+      "sha256": "7d1a3127549927a25137524f0204a5e11021c5d7ae35281cbbabfa203aa2357a"
+    },
+    {
+      "path": "assets/bootstrap.sh",
+      "sha256": "9a6bf0aa4b3774e972d4936cfec356f7c155df0591534e5b049f5fc5a9c4903d"
+    },
+    {
+      "path": "assets/serve.py",
+      "sha256": "a47766e674bdc986f1bccdbc80fba5b9eb5fafaddd2d405d7d049421b57091c1"
+    },
+    {
+      "path": "assets/align-page.py",
+      "sha256": "32b262c5e0330430996dc149de56114dd5af8bd35d54c26a29b19402e741f1db"
+    },
+    {
+      "path": "assets/archify-tabs.py",
+      "sha256": "b512b5c295716b7cf62d8285497dcf688096ce9b1ceaf25da86664694e7a6058"
+    }
+  ]
+}
