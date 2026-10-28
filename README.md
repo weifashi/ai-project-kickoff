@@ -1,6 +1,6 @@
 # AI 新项目启动技能包
 
-**版本：0.1.0-draft.1 · 草案 · 未安装**
+**版本：0.1.0-draft.2 · 草案 · 支持隔离试用安装**
 
 从“我要做一个项目”到可评审、可归档、可验证、可交接的启动方案。
 默认采用**轻量 / 标准 / 高风险三档自适应**，涵盖官网、Web/SaaS/后台、移动、桌面、API/CLI/SDK，并按需叠加离线、外设、交易和产品内置LLM风险。
@@ -8,9 +8,10 @@
 ## 从哪里开始
 
 1. AI读取 [项目启动入口](skills/ai-project-kickoff/SKILL.md)，确认平台、档位及本轮交付目标，再按需加载参考。
-2. 到方案评审或阶段汇报时读取 [随包html-mockup](skills/html-mockup/SKILL.md)，生成自包含HTML并实际检查；不把预览副本当长期存档。
+2. 到方案评审或阶段汇报时读取 [随包html-mockup](skills/ai-project-kickoff-html-mockup/SKILL.md)，生成自包含HTML并实际检查；不把预览副本当长期存档。
 3. 按需使用 [9份模板](skills/ai-project-kickoff/assets/templates/)，填写实际项目事实；模板存在不代表项目已通过验收。
-4. 看 [已接受设计与范围](docs/accepted-design.md)、[验证与限制](docs/validation.md)、[独立场景记录](docs/scenario-evidence.md)、[HTML交付报告](docs/delivery-report.html)。
+4. 安装前看 [隔离安装与回退](docs/installation.md)与[本次兼容HTML报告](docs/design/prototypes/installation-compat/source/index.html)；只安装到当前明确授权的客户端，保留既有 html-mockup。
+5. 看 [已接受设计与范围](docs/accepted-design.md)、[验证与限制](docs/validation.md)、[独立场景记录](docs/scenario-evidence.md)、[HTML交付报告](docs/delivery-report.html)。
 
 无需安装也能让AI按仓库文件读取。示例指令：
 
@@ -26,7 +27,7 @@ skills/
 │  ├─ SKILL.md
 │  ├─ references/
 │  └─ assets/templates/
-└─ html-mockup/
+└─ ai-project-kickoff-html-mockup/
    ├─ SKILL.md
    ├─ references/
    └─ assets/
@@ -46,6 +47,6 @@ tests/
 - 本包不是所有行业、法规或平台的合规认证，也不能保证任意未来项目零遗漏。
 - 用户于2026-10-28明确要求改为公开仓库；此授权仅限本仓库，不自动公开笔记、其他项目或设备资料。整体内容没有在此声明新的统一开源许可，随包第三方/源素材分别遵循其许可和来源记录。
 
-初始版本的交付报告保留当时私有存储的历史描述；当前可见性以GitHub仓库设置和本README为准。
+初始版本的交付报告保留当时私有存储、暂不安装及旧目录名的历史描述；当前目录名和安装方法见本README与安装文档。当前可见性以GitHub仓库设置和本README为准。
 
 本仓库保存草案不等于已安装。不要在未获得新请求时复制到任何客户端技能目录、修改全局规则或同步其他机器。

@@ -2,6 +2,8 @@
 from html.parser import HTMLParser
 from pathlib import Path
 import re
+import shutil
+import tempfile
 import unicodedata
 from urllib.parse import unquote, urlsplit
 import unittest
@@ -54,7 +56,7 @@ class Resources(HTMLParser):
 
 class PackageIntegrity(unittest.TestCase):
     def test_two_discoverable_skill_entries(self):
-        for name in ('ai-project-kickoff', 'html-mockup'):
+        for name in ('ai-project-kickoff', 'ai-project-kickoff-html-mockup'):
             with self.subTest(skill=name):
                 text = (ROOT / 'skills' / name / 'SKILL.md').read_text()
                 self.assertTrue(text.startswith('---\n'))
@@ -62,6 +64,26 @@ class PackageIntegrity(unittest.TestCase):
                 self.assertRegex(front, rf'(?m)^name: {name}$')
                 self.assertRegex(front, r'(?m)^description: .+')
                 self.assertLess(len(text.splitlines()), 500)
+
+    def test_install_isolates_companion_from_existing_html_mockup(self):
+        companion = 'ai-project-kickoff-html-mockup'
+        source = ROOT / 'skills' / companion
+        self.assertTrue(source.is_dir(), 'Packaged companion must have its own install namespace')
+        with tempfile.TemporaryDirectory() as directory:
+            dest = Path(directory)
+            legacy = dest / 'html-mockup'
+            legacy.mkdir()
+            sentinel = legacy / 'SKILL.md'
+            sentinel.write_text('EXISTING USER SKILL - DO NOT CHANGE')
+            for name in ('ai-project-kickoff', companion):
+                shutil.copytree(ROOT / 'skills' / name, dest / name,
+                                ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+            entry = dest / 'ai-project-kickoff/SKILL.md'
+            targets = [entry.parent / m for m in re.findall(r'\]\(([^)]+/SKILL\.md)\)', entry.read_text())]
+            self.assertIn((dest / companion / 'SKILL.md').resolve(), [p.resolve() for p in targets])
+            self.assertNotIn(sentinel.resolve(), [p.resolve() for p in targets])
+            self.assertEqual(sentinel.read_text(), 'EXISTING USER SKILL - DO NOT CHANGE')
+            self.assertIn('name: ' + companion, (dest / companion / 'SKILL.md').read_text())
 
     def test_nine_templates_are_substantial(self):
         for name in TEMPLATES:

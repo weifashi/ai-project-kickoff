@@ -1,7 +1,7 @@
 # 原型、界面设计与评审归档
 
 本篇是本技能内原型与界面设计的详细来源；资料总目录、运维与证据保管见 [文档与运维](documentation-and-operations.md)。
-适用本技能全部项目：方案与报告必须经过 [html-mockup](../../html-mockup/SKILL.md)。有 UI 画页面；无 UI 画契约/流程 HTML，不强造登录、后台或数据库，也不能因无 UI 将 html-mockup 记为 `na`。
+适用本技能全部项目：方案与报告必须经过 [html-mockup](../../ai-project-kickoff-html-mockup/SKILL.md)。有 UI 画页面；无 UI 画契约/流程 HTML，不强造登录、后台或数据库，也不能因无 UI 将 html-mockup 记为 `na`。
 本文件属于技能草案，不代表已安装、已实施或已获得任何公开服务授权。
 
 ## 0. 必经工作流与唯一源码

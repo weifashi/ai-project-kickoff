@@ -3,7 +3,7 @@ name: ai-project-kickoff
 description: Use when starting a new software product or repository, preparing a project kickoff, or requesting a comprehensive startup workflow covering brainstorming, prototypes, architecture, documentation placement, and AI handoff. 适用于新项目启动、立项、原型存档与开工准备；不用于普通修复、单次部署或无关闲聊。
 metadata:
   status: "draft"
-  version: "0.1.0-draft.1"
+  version: "0.1.0-draft.2"
   research_snapshot: "2026-10-28"
 ---
 
@@ -84,7 +84,7 @@ metadata:
 
 ## html-mockup 是固定环节，不是可选装饰
 
-配套 [html-mockup](../html-mockup/SKILL.md) 随本仓库保存；进入以下环节时读取其入口并使用配套模板/检查工具，不依赖机器上预装的同名技能。
+配套 [ai-project-kickoff-html-mockup](../ai-project-kickoff-html-mockup/SKILL.md) 随本仓库保存；进入以下环节时读取其入口并使用配套模板/检查工具，安装目录和技能名独立，不覆盖或借用机器原有的 html-mockup；安装时两份技能必须来自同一固定版本。
 
 1. **方案评审（G2/G3）**：用模式A画目标、任务旅程、页面/调用、状态、规则、取舍和待决定点。没有UI就画契约与请求/响应流程，不强造页面。
 2. **阶段收尾**：有真实变更时用模式B从完整文件底账讲表字段、旧→新规则、页面→操作→结果、业务影响、验证与回退；没有代码变更则出方案/研究报告，明确无表/API/业务规则变化。

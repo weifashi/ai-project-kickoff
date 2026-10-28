@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSETS = ROOT / 'skills/html-mockup/assets'
+ASSETS = ROOT / 'skills/ai-project-kickoff-html-mockup/assets'
 
 
 def module(name):

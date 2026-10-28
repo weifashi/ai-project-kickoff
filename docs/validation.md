@@ -2,7 +2,13 @@
 
 版本：0.1.0-draft.1；日期：2026-10-28；交付类型：可审阅的源码草案，不是已安装软件或生产业务系统。
 
-## 实际检查
+## 当前兼容版本（0.1.0-draft.2）
+
+在原始检查基础上新增安装隔离回归：先复现同名目录冲突导致的失败，再改独立命名并通过26项测试（19工具＋7结构/布局）。两份技能格式校验通过。工具算法未改，旧场景结果仍只证明当时版本；安装后必须另核对实际文件哈希和路径，不能以原始未安装版本的检查代替。
+
+安装方法与回退见 [安装文档](installation.md)；实际本机安装结果由本机记录与it-note摘要回读确认，不预先假报其他机器安装。
+
+## 原始版本实际检查
 
 | 层级 | 结果与证据范围 |
 |---|---|
@@ -21,8 +27,8 @@
 
 ```bash
 python3 -m unittest discover -s tests -p '*_test.py' -v
-python3 skills/html-mockup/assets/check-overflow.py skills/html-mockup/assets/template.html skills/html-mockup/assets/blocks.html --widths=390,768,1440
-python3 skills/html-mockup/assets/check-overflow.py docs/delivery-report.html --widths=390,768,1440
+python3 skills/ai-project-kickoff-html-mockup/assets/check-overflow.py skills/ai-project-kickoff-html-mockup/assets/template.html skills/ai-project-kickoff-html-mockup/assets/blocks.html --widths=390,768,1440
+python3 skills/ai-project-kickoff-html-mockup/assets/check-overflow.py docs/delivery-report.html --widths=390,768,1440
 ```
 
 检查默认保留Chrome沙箱。受控隔离容器确实不能启动时才显式传--no-sandbox，并披露；这不是关闭系统浏览器或操作系统安全设置。检查失败非零，不能说通过。

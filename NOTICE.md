@@ -2,6 +2,6 @@
 
 本仓库是用户明确要求公开的技能草案，未在整体层面新增统一开源许可。
 
-随包 html-mockup 由既有 wfs html-mockup 技能适配，原始MIT许可和版权声明保存在 `skills/html-mockup/LICENSE.source-MIT.txt`，来源日期、哈希与改写范围见该技能的 SOURCE.md/SOURCE-HASHES.json。保留这些声明，不把第三方素材或整个仓库默认重新授权。
+随包 html-mockup 由既有 wfs html-mockup 技能适配，原始MIT许可和版权声明保存在 `skills/ai-project-kickoff-html-mockup/LICENSE.source-MIT.txt`，来源日期、哈希与改写范围见该技能的 SOURCE.md/SOURCE-HASHES.json。保留这些声明，不把第三方素材或整个仓库默认重新授权。
 
 技术调研引用官方资料并记录来源，不包含原站整篇手册。参考项目只吸收呈现与规划方法，不复制其业务账号、私有实现或未核实金融/法律结论。公开可见不等于新增统一开源许可；后续加入内容或再分发时仍应复核实际文件的许可与内容分级。

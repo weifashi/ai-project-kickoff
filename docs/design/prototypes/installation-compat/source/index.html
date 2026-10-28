@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>项目启动技能：隔离安装兼容报告</title>
+<style>
+:root{--bg:#f3f4f6;--paper:#fff;--ink:#1f2937;--muted:#5f6876;--line:#dce1e8;--new:#16a34a;--accent:#f59e0b;--warn:#dc2626;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+a{color:#9a4e05} code{font-family:var(--mono);overflow-wrap:anywhere}
+.wrap{width:100%;max-width:900px;margin:auto;padding:0 20px;overflow-wrap:break-word}
+.wrap.desk{max-width:1180px}
+.wrap.rep{max-width:clamp(900px,calc(100vw - 64px),1920px)}
+.wrap.rep .say,.wrap.rep .hint,.wrap.rep .lead,.wrap.rep .rule dd{max-width:52em}
+header{background:var(--paper);border-bottom:3px solid var(--accent);padding:28px 0;margin-bottom:20px}
+h1{font-size:28px;line-height:1.3;margin:0 0 10px} h2{font-size:20px;margin:0 0 12px} h3{font-size:18px;margin:0 0 8px}
+p{margin:8px 0}.muted,small{color:var(--muted)}small{font-size:14px}
+.nav{position:sticky;top:0;z-index:3;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;padding:10px 0;margin-bottom:20px}
+.nav a{display:inline-block;padding:3px 10px;margin-right:6px;border:1px solid var(--line);border-radius:20px;text-decoration:none}
+.st{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px;margin:0 0 20px;min-width:0;scroll-margin-top:76px}
+.n{font-family:var(--mono);color:#b45309}.hint,.upd{background:#fff8e7;border-left:4px solid var(--accent);padding:12px 16px;margin:14px 0}
+.upd,.newf{background:#f0fdf4;border-color:var(--new)}.newf{border:1px dashed var(--new);padding:12px;border-radius:6px}
+.tag-new{color:#116b2e;font-weight:700}.warn{background:#fef2f2;border-color:var(--warn);color:#991b1b}.old{color:var(--warn);text-decoration:line-through}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid2>*{min-width:0}
+.rule{border:1px solid var(--line);border-radius:8px;padding:16px}.rule dl{display:grid;grid-template-columns:100px minmax(0,1fr);gap:8px 12px;margin:12px 0}
+dt{font-weight:650}dd{margin:0}.wrap dd,.wrap dt,.wrap dl>*{min-width:0}
+.ascii{font:14px/1.65 var(--mono);background:#f4f5f7;color:var(--ink);padding:16px;white-space:pre;overflow:auto;max-width:100%;border:1px solid var(--line);border-radius:6px}
+.bleed,.table-scroll{max-width:100%;overflow-x:auto}.wrap.rep .bleed{width:100%;margin-left:0}
+table{width:100%;border-collapse:collapse;font-size:16px;text-align:left}th,td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f8fafc}
+.phone{max-width:340px;width:100%;margin:16px auto;border:1px solid #bfc8d3;border-radius:14px;overflow:hidden;background:#fff}.phone .bar{background:#f1f5f9;padding:12px;text-align:center;font-weight:650}.phone .body{padding:16px}
+.row{display:flex;gap:12px;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0}.row>*{min-width:0}
+.btn{display:block;text-align:center;background:var(--accent);border-radius:6px;padding:10px;margin:14px 0 0;color:#422006;font-weight:650}
+.shell{display:grid;grid-template-columns:150px minmax(0,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden}.sidebar{background:#f1f5f9;padding:16px}.content{min-width:0;padding:16px}.topbar{border-bottom:1px solid var(--line);padding:10px 0;font-weight:650}
+.mmd{margin:16px 0;background:#0b0f14;color:#e5e7eb;padding:18px;overflow-x:auto;max-width:100%;border-radius:8px}.mmd svg{display:block;margin:auto;height:auto}.mmd.wide svg{max-width:none}.mmd details{font-size:14px;margin-top:14px}.mmd pre{overflow:auto}.mmd summary{cursor:pointer}
+.flow{width:680px;max-width:none;height:auto}.foot{padding:20px 0 40px;color:var(--muted);font-size:14px}
+@media(max-width:900px){.wrap table{display:block;overflow-x:auto;max-width:100%}}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.shell{grid-template-columns:1fr}.sidebar{border-bottom:1px solid var(--line)}.st{padding:16px}.wrap{padding:0 12px}h1{font-size:24px}.rule dl{grid-template-columns:1fr;gap:4px}.rule dd{margin-bottom:10px}}
+</style>
+</head>
+<body><header><div class="wrap rep"><small>2026-10-28 · 0.1.0-draft.2 · 兼容安装变更</small><h1>保留旧html-mockup，独立安装项目启动技能</h1><p class="lead">只安装到当前Codex；不覆盖旧技能、不操作其他机器。</p></div></header><nav class="nav"><div class="wrap rep"><a href="#s0">S0</a><a href="#s1">S1</a><a href="#s2">S2</a><a href="#s3">S3</a><a href="#s4">S4</a><a href="#s5">S5</a><a href="#s6">S6</a><a href="#s7">S7</a></div></nav><main class="wrap rep"><section class="st" id="s0"><h2><span class="n">S0</span> 旧技能不动，新技能单独住</h2><p class="say">已按你的选择处理兼容：主技能与专属HTML配套采用独立名称，允许与现有html-mockup共存。版本0.1.0-draft.2，仍是试用草案。</p><div class="hint">源码兼容修复已经完成；实际安装结果以当前Codex写入后的文件哈希、路径核验与最终回复为准。本页不会把方案或文件存在冒充客户端自动调用成功。</div></section><section class="st" id="s1"><h2><span class="n">S1</span> 完整文件底账：27项改动（含重命名）</h2><p>基线d879153；包含当前暂存/工作树全部任务文件。R为重命名；A新增；M修改。改名但内容未变的工具记无算法/业务规则影响。</p><pre class="ascii">BASE d879153 -&gt; compatible draft.2
+M    +  1 -  1 NOTICE.md
+M    +  6 -  5 README.md
+M    +  1 -  1 VERSION
+M    +  4 -  0 docs/accepted-design.md
+A    +  7 -  0 docs/design/prototypes/installation-compat/index.md
+A    + 72 -  0 docs/design/prototypes/installation-compat/source/index.html
+A    + 38 -  0 docs/installation.md
+M    +  9 -  3 docs/validation.md
+R100 +  0 -  0 skills/html-mockup/LICENSE.source-MIT.txt -&gt; skills/ai-project-kickoff-html-mockup/LICENSE.source-MIT.txt
+R094 +  4 -  2 skills/html-mockup/SKILL.md -&gt; skills/ai-project-kickoff-html-mockup/SKILL.md
+R100 +  0 -  0 skills/html-mockup/SOURCE-HASHES.json -&gt; skills/ai-project-kickoff-html-mockup/SOURCE-HASHES.json
+R089 +  4 -  0 skills/html-mockup/SOURCE.md -&gt; skills/ai-project-kickoff-html-mockup/SOURCE.md
+R100 +  0 -  0 skills/html-mockup/assets/blocks.html -&gt; skills/ai-project-kickoff-html-mockup/assets/blocks.html
+R100 +  0 -  0 skills/html-mockup/assets/check-overflow.py -&gt; skills/ai-project-kickoff-html-mockup/assets/check-overflow.py
+R100 +  0 -  0 skills/html-mockup/assets/probe-browser.mjs -&gt; skills/ai-project-kickoff-html-mockup/assets/probe-browser.mjs
+R100 +  0 -  0 skills/html-mockup/assets/render-mermaid.py -&gt; skills/ai-project-kickoff-html-mockup/assets/render-mermaid.py
+R100 +  0 -  0 skills/html-mockup/assets/template.html -&gt; skills/ai-project-kickoff-html-mockup/assets/template.html
+R100 +  0 -  0 skills/html-mockup/references/change-report.md -&gt; skills/ai-project-kickoff-html-mockup/references/change-report.md
+R100 +  0 -  0 skills/html-mockup/references/tools.md -&gt; skills/ai-project-kickoff-html-mockup/references/tools.md
+M    +  2 -  2 skills/ai-project-kickoff/SKILL.md
+M    +  1 -  1 skills/ai-project-kickoff/assets/templates/prototype-record.md
+M    +  1 -  1 skills/ai-project-kickoff/references/lifecycle.md
+M    +  1 -  1 skills/ai-project-kickoff/references/prototypes-and-design.md
+M    +  1 -  1 skills/ai-project-kickoff/references/quality-and-handoff.md
+M    +  1 -  1 skills/ai-project-kickoff/references/sync-and-versioning.md
+M    +  1 -  1 tests/html_mockup_tools_test.py
+M    + 23 -  1 tests/package_integrity_test.py
+</pre><p>分类：两份技能入口/模板与相关参考改为独立路由；版本/许可与安装说明只更新描述；测试路径和新增隔离回归保障兼容；HTML与索引记录本次变更。上游来源哈希、MIT声明、模板、积木和工具算法原样保留。</p></section><section class="st" id="s2"><h2><span class="n">S2</span> 表字段与数据影响</h2><p><b>无业务数据库、字段、索引或迁移变化。</b>不处理翻译历史、收藏、Keychain或任何用户数据。仅新增两份技能目录；既有html-mockup符号链接和原始文件保持原样。</p></section><section class="st" id="s3"><h2><span class="n">S3</span> 入口 → 操作 → 改前/改后结果</h2><article class="rule"><h3>R1：只隔离配套，不覆盖旧技能</h3><p>原规则：主入口指向兄弟目录html-mockup，安装到已有同名技能的环境可能冲突或误读旧版。新规则：指向ai-project-kickoff-html-mockup，两份新技能同commit安装。</p><p>位置：skills/ai-project-kickoff/SKILL.md 的HTML配套段；独立配套SKILL.md的name/description；对应参考和测试。</p><div class="phone"><div class="bar">当前Codex对话入口 · 示意</div><div class="body"><div class="row">用户：使用 $ai-project-kickoff，帮我规划新项目。</div><div class="row newf">AI：读取主技能 → 按需读取专用HTML配套。</div><span class="btn">下一轮发出新项目请求</span><div class="row">结果：三档流程＋HTML说明；已有html-mockup仍可供原任务使用。</div></div></div></article><article class="rule"><h3>R2：安装授权不是源码成熟或部署授权</h3><p>原交付暂不安装；本轮用户单独授权当前Codex安装。新说明将历史未安装状态与当前授权分开，仍保留draft，不推广到其他客户端、设备或业务上线。位置：README、accepted-design、同步手册和installation。</p></article></section><section class="st" id="s4"><h2><span class="n">S4</span> 实际读取链与隔离目录</h2><div class="bleed"><svg class="flow" style="width:820px" viewBox="0 0 820 170" role="img" aria-label="当前Codex读取项目启动技能，再读取独立HTML配套；旧技能保持独立"><g fill="#dcfce7" stroke="#86efac"><rect x="10" y="20" width="180" height="70" rx="8"/><rect x="240" y="20" width="240" height="70" rx="8"/><rect x="530" y="20" width="280" height="70" rx="8"/></g><g fill="#334155" font-size="18" text-anchor="middle"><text x="100" y="62">当前Codex</text><text x="360" y="62">ai-project-kickoff</text><text x="670" y="50">专用HTML配套</text><text x="670" y="75">独立名称与目录</text><text x="410" y="140">既有html-mockup：不覆盖、不改链接</text></g><g stroke="#64748b" stroke-width="2"><path d="M190 55 H230 l-10 -6 M230 55 l-10 6 M480 55 H520 l-10 -6 M520 55 l-10 6" fill="none"/></g></svg></div><pre class="ascii">skills/
+  html-mockup/                       [existing, untouched]
+  ai-project-kickoff/                [new]
+  ai-project-kickoff-html-mockup/    [new]</pre></section><section class="st" id="s5"><h2><span class="n">S5</span> 影响哪些使用场景</h2><p>当前Codex新项目规划：获得明确的配套读取路径。已有通用HTML任务：旧技能保留；专用配套description限定项目启动场景，实际自动选择仍须下一轮观察。Mac、其他Codex用户、Claude及业务系统：不安装、不更新。本轮没有代理并行任务，不把旧场景试跑冒充本次安装验收。</p></section><section class="st" id="s6"><h2><span class="n">S6</span> 接口、名称和旧版本兼容</h2><p>没有HTTP API、错误码或业务多语言文案变化。变化是技能目录/名称与相对链接；按原GitHub路径安装的命令应更新为新路径。原始tag保持历史内容，不移动tag，也不占用旧html-mockup做兼容别名。源码、笔记与实际安装版本分别核对。</p></section><section class="st" id="s7"><h2><span class="n">S7</span> 验证、风险与撤销</h2><p>隔离回归先失败后通过；当前26项测试与两份技能格式校验通过。未改工具算法，不重新声称真实业务或所有平台验收。最终HTML需390/768/1440实际浏览器检查，安装需逐文件核对固定commit，结果在最终交付记录中明确。</p><p>规则修改前已保留源码基线；旧技能记录链接和文件清单哈希。新增目录之前不存在，安装失败先核对部分状态；撤销时只移出本次新增两份且先检查后续用户改动。不删除旧技能，不修改全局AGENTS，不回滚任何业务数据库。</p></section></main></body></html>
